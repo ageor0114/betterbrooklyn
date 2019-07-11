@@ -97,17 +97,12 @@ export default class App extends React.Component{
 	    <MuiThemeProvider theme={theme}>
 		<Provider store={store}>
 			<ConnectedRouter>
-			    <div id="container">
-				<Grid container
-				justify="center">
-				    <Grid item sm={6}>
+			    <div>
 					<Header></Header>
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/login" component={LoginPage} />
 					<Route exact path="/signup" component={SignupPage} />
 					<Route exact path="/sandwiches" component={SandwichesPage} />
-				    </Grid>
-				</Grid>
 			    </div>
 			</ConnectedRouter>
 		</Provider>
