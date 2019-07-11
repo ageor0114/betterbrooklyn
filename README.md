@@ -1,1 +1,1 @@
-# Cooper Union Boiler Plate
+# Better Brooklyn
