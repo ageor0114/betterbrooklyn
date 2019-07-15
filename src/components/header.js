@@ -9,6 +9,12 @@ import Typography from '@material-ui/core/Typography';
 import Snackbar from '@material-ui/core/Snackbar';
 import { Link } from 'react-router-dom'
 
+const styles = {
+  root: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  },
+};
+
 class Header extends React.Component{
     constructor(props){
 	super(props);
@@ -43,6 +49,11 @@ class Header extends React.Component{
     }
     
     render(){
+	const style = {
+			background:'#a0522d',//'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+		  	color: 'white',
+		  	//fontFamily: "Helvetica",
+			};
 	let greeting;
 	if(!this.props.auth.isLoaded){
 	    // auth is still warming up
@@ -85,7 +96,7 @@ class Header extends React.Component{
 
 	return(
 	    <div>
-		<AppBar>
+		<AppBar style={style}>
 		    <Toolbar>
 			    <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
 				<Link to="/">
@@ -111,6 +122,7 @@ class Header extends React.Component{
 	);
     }
 }
+
 
 export default compose(
     firebaseConnect(),

@@ -2,17 +2,26 @@
 
 h1{
 	font-family: 'Helvetica';
-	font-size: 10em;
-	color: #fabb0c;
-	border-color: black;
+	color: #A0522D; //#fabb0c;
+	font-size: 8em;
+
+	//flex-grow: 10;
 	//text-shadow: -.03em 0 white, 0 .03em white, .03em 0 white, 0 -.03em white;
-	text-shadow: -6px 6px white;
+	//text-shadow: -6px 6px white;
+}
+
+h2{
+	font-family: 'Helvetica';
+	color: #A0522D; 
+	font-size: 3em;
+
 }
 
 h3{
 	font-family: 'Helvetica';
-	font-size: 5em;
 	color: white;
+	font-size: 2.7em;
+	//flex-grow: 1;
 }
 
 a{

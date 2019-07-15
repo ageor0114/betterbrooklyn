@@ -1,20 +1,53 @@
-//HOME PAGE
+//***************************
+//        HOME PAGE
+//***************************
 
+.home{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: sapce-around;
+	align-items: center;
+	//align-contents
+}
 
 
 .homeCard{
+	padding-top: 10vh;
 	width: 100vw;
 	height: 100vh;
-
+	max-width:100%;
 }
 
+//===================
+//   LANDING CARD
+//===================
 #landing
 {
-	background-image: url('../images/bridge.jpg');
-	padding-top: 100px;
+	background-color: #ffd0a6 //#ffeaa7
+	//background-image: url('../images/bridge.jpg');
+	//padding-top: 100px;
 }
 
+.landingTitle{
+	//height: 80vh;
+}
+
+//===================
+//   MISSION CARD
+//===================
 #mission
 {
-	
+	background-color: #ffd7b3;
+}
+
+//===================
+//   HOW TO CARD
+//===================
+#howTo
+{
+	background-color: #ffdcbd;	
+}
+
+#test{
+	background-color: white;
 }

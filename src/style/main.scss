@@ -1,5 +1,6 @@
 @import "home.scss";
 @import "typography.scss";
+@import "components.scss";
 
 *{
       margin: 0;
@@ -8,4 +9,8 @@
 
 #container{
     margin-top: 5rem;
+}
+
+#vaMiddle{
+	vertical-align: middle;
 }
