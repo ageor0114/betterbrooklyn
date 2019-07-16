@@ -7,21 +7,26 @@ class HomePage extends React.Component{
     render(){
 	return(
 		<div>
-		    <div className="homeCard" id="landing">
-		    	<Grid container spacing={3}>
-		    		<Grid className="landingTitle" item xs={12} lg={6}>
-		    			<div id="vaMiddle">
-		    			<h3>Building a</h3>
-						<h1>Better</h1>
-						<h1>Brooklyn.</h1>
-						</div>
+		    <div>
+		    	<Grid className="homeCard" id="landing" container spacing={3}>
+		    		<Grid item xs={1}>
 		    		</Grid>
-		    		<Grid className="landingImage" item xs={12} lg={6}>
-		    			<img src="https://github.com/ageor0114/betterbrooklyn/blob/master/src/images/hands.png?raw=true"/>
+		    		<Grid className="table" item xs={12} lg={7}>
+		    			<div className="cell" id="vaMiddle">
+		    			<center>
+		    			<h1 className="large text">Better Brooklyn</h1>
+		    			<h3 className="big text">Fostering real community growth</h3>	
+		    			<br/>
+		    			<br/>
+		    			<button className="button"><b>GET STARTED ➤</b></button>
+		    			</center>				
+		    			</div>
+		    		</Grid>
+		    		<Grid item xs={12} lg={4}>
+		    			<br/>
+		    			<center><img className="hands" src="https://github.com/ageor0114/betterbrooklyn/blob/master/src/images/hands.png?raw=true"/></center>
 		    		</Grid>
 		    	</Grid>
-
-				<center><AnchorLink href='#mission'><img className="arrow" src="https://github.com/ageor0114/betterbrooklyn/blob/master/src/images/downarrow.gif?raw=true"/></AnchorLink></center>
 		    </div>
 		    <div className="homeCard" id="mission">
 		    	<center><h2>Mission</h2></center>

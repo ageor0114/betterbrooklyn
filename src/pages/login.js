@@ -102,6 +102,12 @@ class LoginPage extends React.Component{
 	}
 	return(
 	    <div>
+	    <br/>
+	    <br/>
+	    <br/>
+	    <br/>
+	    <br/>
+	    <br/>
 		{payload}
 	    </div>
 	)

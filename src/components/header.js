@@ -100,7 +100,7 @@ class Header extends React.Component{
 		    <Toolbar>
 			    <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
 				<Link to="/">
-				    Better Brooklyn
+				    <h1 className="headerTitle">Better Brooklyn</h1>
 				</Link>
 			    </Typography>
 			<div>

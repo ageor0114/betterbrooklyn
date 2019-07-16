@@ -4,3 +4,24 @@
 	width: 70px;
 	height: 70px;
 }
+
+.button{
+	width: 200px;
+	height: 70px;
+	background-color: white;
+	color: #A0522D;
+	border: none;
+	font-family: 'Didact Gothic';
+	font-size: 18px;
+	letter-spacing: 1.25px;
+}
+
+.hands{
+	width: 60vw;
+	height: auto;
+}
+@media(min-width:500px){
+.hands{
+	width: auto;
+	height: 90vh;//450,600
+}}

@@ -1,3 +1,8 @@
+//**********************************
+//   TOBE: portal.js
+//**********************************
+
+
 import React from 'react';
 import { connect } from 'react-redux'
 import { compose } from 'redux'
@@ -5,7 +10,49 @@ import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
+import {
+  Checkbox,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  Menu,
+  Segment,
+  Sidebar,
+} from 'semantic-ui-react'
 
+const VerticalSidebar = ({ animation, direction, visible }) => (
+  <Sidebar
+    as={Menu}
+    animation={animation}
+    direction={direction}
+    icon='labeled'
+    inverted
+    vertical
+    visible={visible}
+    width='thin'
+  >
+    <Menu.Item as='a'>
+      <Icon name='tasks' />
+      Proposals
+    </Menu.Item>
+    <Menu.Item as='a'>
+      <Icon name='group'/>{/*'address card outline' />*/}
+      Members
+    </Menu.Item>
+    <Menu.Item as='a'>
+      <Icon name='bitcoin' />
+      Tokens
+    </Menu.Item>
+  </Sidebar>
+)
+
+VerticalSidebar.propTypes = {
+  animation: PropTypes.string,
+  direction: PropTypes.string,
+  visible: PropTypes.bool,
+}
 
 class SandwichesPage extends React.Component{
     constructor(props){
@@ -13,9 +60,13 @@ class SandwichesPage extends React.Component{
 	this.state = {
 	    name: '',
 	    ingredients: '',
-	    reason: ''
+	    reason: '',
+	    animation: 'scale down',
+	    direction: 'left',
+	    dimmed: false,
+	    visible: true,
 	}
-    }
+	}	
 
     handleChange(event, field){
 	this.setState({
@@ -46,7 +97,9 @@ class SandwichesPage extends React.Component{
 	    });
     }
 
-    
+    handleAnimationChange = animation => () =>
+    	this.setState(prevState => ({ animation, visible: !prevState.visible }))
+
     render(){
 	let payload;
 	if(!isLoaded(this.props.sandwiches)){
@@ -63,8 +116,18 @@ class SandwichesPage extends React.Component{
 	    });
 	}
 	return(
-	    <div>
-		<form onSubmit={(event) => {this.handleSubmit(event);}}>
+	    <div className="portal">
+	    <Sidebar.Pushable as={Segment}>
+          <VerticalSidebar animation={'scale down'} direction={'left'} visible={true} />
+
+          <Sidebar.Pusher dimmed={false && true}>
+            <Segment basic>
+              <Header as='h3'>Application Content</Header>
+              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+            </Segment>
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
+		{/*<form onSubmit={(event) => {this.handleSubmit(event);}}>
 		    <FormControl fullWidth>
 			<TextField
 			    label="Sandwich Name"
@@ -98,7 +161,7 @@ class SandwichesPage extends React.Component{
 		My favorite sandwiches are:
 		<ul>
 		    {payload}
-		</ul>
+		</ul>*/}
 	    </div>
 	)
     }

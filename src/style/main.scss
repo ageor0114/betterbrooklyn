@@ -1,4 +1,5 @@
 @import "home.scss";
+@import "portal.scss";
 @import "typography.scss";
 @import "components.scss";
 
@@ -7,10 +8,24 @@
       padding: 0;
 }
 
-#container{
-    margin-top: 5rem;
+#container{ margin-top: 5rem; }
+
+body{ 
+	font-size: 16px; 
 }
 
-#vaMiddle{
+.table{	
+	display: flex;
+	align-items: center
+}
+
+.cell{
+	display: table-cell;
 	vertical-align: middle;
 }
+
+#vaMiddle{ vertical-align: middle; }
+
+#white{ background-color: white }
+
+#yellow{ background-color: yellow }
