@@ -30,11 +30,12 @@ class HomePage extends React.Component{
 		    </div>
 		    <div className="homeCard" id="mission">
 		    	<center><h2>Mission</h2></center>
-
+		    	<center><p>A decentralized autonomous organization focused on bringing Brooklyn closer together on the social causes they care deeply about.</p></center>
 		    	<center><AnchorLink href='#howTo'><img className="arrow" src="https://github.com/ageor0114/nyit-hackathon/blob/master/src/pages/downarrow.gif?raw=true"/></AnchorLink></center>
 		    </div>
 		    <div className="homeCard" id="howTo">
 		    	<center><h2>How It Works</h2></center>
+		   
 		    	<center><AnchorLink href='#landing'>UP</AnchorLink></center>
 		    </div>
 	    </div>
