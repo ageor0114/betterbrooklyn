@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Footer from '../components/header.js';
+import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component{
     render(){
@@ -19,7 +20,9 @@ class HomePage extends React.Component{
 		    			<h3 className="big text">Facilitating real community action</h3>	
 		    			<br/>
 		    			<br/>
+		    			<Link to="/signup">
 		    			<button className="button"><b>GET STARTED ➤</b></button>
+		    			</Link>
 		    			</center>				
 		    			</div>
 		    		</Grid>
