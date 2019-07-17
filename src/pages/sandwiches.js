@@ -118,10 +118,11 @@ class SandwichesPage extends React.Component{
 	return(
 	    <div className="portal">
 	    <Sidebar.Pushable as={Segment}>
-          <VerticalSidebar animation={'scale down'} direction={'left'} visible={true} />
+          <VerticalSidebar className="sidebar" animation={'scale down'} direction={'left'} visible={this.state.visible} />
 
           <Sidebar.Pusher dimmed={false && true}>
             <Segment basic>
+            <Button onClick={this.handleAnimationChange('scale down')}>Scale Down</Button>
               <Header as='h3'>Application Content</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Segment>

@@ -16,6 +16,7 @@ import initialState from './initialState.json';
 import './style/main.css';
 import Header from './components/header';
 import Grid from '@material-ui/core/Grid';
+import Footer from './components/footer';
 
 
 
@@ -103,6 +104,7 @@ export default class App extends React.Component{
 					<Route exact path="/login" component={LoginPage} />
 					<Route exact path="/signup" component={SignupPage} />
 					<Route exact path="/sandwiches" component={SandwichesPage} />
+          <Footer></Footer>
 			    </div>
 			</ConnectedRouter>
 		</Provider>

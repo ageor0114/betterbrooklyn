@@ -5,6 +5,7 @@ import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
+import { Link } from 'react-router-dom'
 
 class SignupPage extends React.Component{
     constructor(props){
@@ -73,9 +74,10 @@ class SignupPage extends React.Component{
 			margin="normal"
 		    />
 		</FormControl>
+		<Link to="/sandwiches">
 		<Button type="submit"
 			variant="contained"
-			color="primary">Signup</Button>
+			color="primary">Signup</Button></Link>
 	    </form>;
 	}
 	if(this.props.auth.isLoaded && !this.props.auth.isEmpty){
@@ -97,17 +99,6 @@ class SignupPage extends React.Component{
 	}
 	return(
 	    <div>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
-	    <br/>
 	    <br/>
 	    <br/>
 	    <br/>

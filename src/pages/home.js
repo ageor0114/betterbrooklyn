@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Footer from '../components/header.js';
 
 class HomePage extends React.Component{
     render(){
@@ -15,7 +16,7 @@ class HomePage extends React.Component{
 		    			<div className="cell" id="vaMiddle">
 		    			<center>
 		    			<h1 className="large text">Better Brooklyn</h1>
-		    			<h3 className="big text">Fostering real community growth</h3>	
+		    			<h3 className="big text">Facilitating real community action</h3>	
 		    			<br/>
 		    			<br/>
 		    			<button className="button"><b>GET STARTED ➤</b></button>

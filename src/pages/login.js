@@ -5,6 +5,7 @@ import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
+import { Link } from 'react-router-dom'
 
 class LoginPage extends React.Component{
     constructor(props){
@@ -76,11 +77,13 @@ class LoginPage extends React.Component{
 			margin="normal"
 		    />
 		</FormControl>
+		<Link to="/sandwiches">
 		<Button type="submit"
 			variant="contained"
 			color="primary">
 		    Login
 		</Button>
+		</Link>
 	    </form>;
 	}
 	if(this.props.auth.isLoaded && !this.props.auth.isEmpty){
