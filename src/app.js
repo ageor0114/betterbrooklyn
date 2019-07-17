@@ -27,7 +27,7 @@ import Grid from '@material-ui/core/Grid';
 import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
-import SandwichesPage from './pages/sandwiches';
+import PortalPage from './pages/portal';
 
 
 
@@ -101,7 +101,7 @@ export default class App extends React.Component{
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/login" component={LoginPage} />
 					<Route exact path="/signup" component={SignupPage} />
-					<Route exact path="/sandwiches" component={SandwichesPage} />
+					<Route exact path="/portal" component={PortalPage} />
 			    </div>
 			</ConnectedRouter>
 		</Provider>

@@ -11,8 +11,8 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
 	signupcard: {
 	    background: '#F6F6F6',
-	    width: '35em',
-	    padding: 25,
+	    width: 360,
+	    padding: 10,
 	    margin: 'auto',
 	    marginTop: '3em',
 	    borderRadius: 3
@@ -36,7 +36,7 @@ const styles = {
 	    fontFamily: 'Didact Gothic',
 	},
     formcontrol: {
-	    width: 500,
+	    width: 360,
 	    margin: 20,
   	},
   	textfield: {
@@ -44,7 +44,7 @@ const styles = {
 	    padding: 5,
 	    border: '1px solid lightgrey',
 	    borderRadius: 3,
-	    width: 400,
+	    width: 300,
 	},
 	linktologin: {
 	    textDecoration: 'none',
@@ -119,6 +119,7 @@ class SignupPage extends React.Component{
 	    // but user is not logged in
 	    payload = <form onSubmit={(event) => {this.handleSubmit(event);}}>
 	    <div className={this.props.classes.signupcard}>
+	    <br/>
 	    <center><h2 className={this.props.classes.h2}><b>Sign Up</b></h2></center>
 		<FormControl className={this.props.classes.formcontrol}>
 			<h3 className={this.props.classes.h3}>Username:</h3>
@@ -147,12 +148,13 @@ class SignupPage extends React.Component{
             margin="normal"
             />
 		</FormControl>
-		<center><Link to="/sandwiches"><Button type="submit" className={this.props.classes.button}>Signup</Button></Link>
+		<center><Link to="/portal"><Button type="submit" className={this.props.classes.button}>Signup</Button></Link>
 		 <br/>
 		 <br/>
         <p><a href="/login"
         className={this.props.classes.linktologin}
         >Already have an account? Login here!</a></p></center>
+        <br/>
         </div>
 	    </form>;
 	}

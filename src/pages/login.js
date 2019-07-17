@@ -24,7 +24,7 @@ const styles = {
 	},
 
   formcontrol: {
-    width: 500,
+    width: 360,
     margin: 20,
   },
 
@@ -33,7 +33,7 @@ const styles = {
     padding: 5,
     border: '1px solid lightgrey',
     borderRadius: 3,
-    width: 400,
+    width: 300,
 },
 
   input: {
@@ -63,8 +63,8 @@ const styles = {
 
 	signupcard: {
 	    background: '#F6F6F6',
-	    width: '35em',
-	    padding: 25,
+	    width: 360,
+	    padding: 10,
 	    margin: 'auto',
 	    marginTop: '3em',
 	    borderRadius: 3
@@ -136,6 +136,7 @@ class LoginPage extends React.Component{
 	    // but user is not logged in
 	    payload = <form onSubmit={(event) => {this.handleSubmit(event);}}>
 	    <div className={this.props.classes.signupcard}>
+	    <br/>
         <center><h2
         className={this.props.classes.h2}>Login!</h2></center>
         <FormControl
@@ -169,7 +170,7 @@ class LoginPage extends React.Component{
 		    />
 		</FormControl>
 		<center>
-		<Link to="/sandwiches">
+		<Link to="/portal">
 		<Button type="submit"
 			className={this.props.classes.button}>
 		    Login
@@ -181,6 +182,7 @@ class LoginPage extends React.Component{
         className={this.props.classes.linktologin}
         >Dont have an account yet? Signup here!</a></p>
         </center>
+        <br/>
         </div>
 	    </form>;
 	}
