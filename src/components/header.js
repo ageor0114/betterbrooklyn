@@ -7,12 +7,20 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Snackbar from '@material-ui/core/Snackbar';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
+  button: {
+  	background:'white',
+  	color: '#A0522D'
+  },
+  loginbutton:{
+  	color: 'white',
+  }
 };
 
 class Header extends React.Component{
@@ -67,7 +75,7 @@ class Header extends React.Component{
 		    <Button variant="contained"
 			style={{marginLeft: 30}}
 			    color="secondary">
-			Muh Sandwiches
+			Portal
 		    </Button>
 	    	</Link>
 
@@ -81,12 +89,12 @@ class Header extends React.Component{
 	    greeting =
 		<span>
 		    <Link to="/login">
-			<Button color="inherit">
+			<Button className={this.props.classes.loginbutton}>
 			Login
 			</Button>
 	    	    </Link>
 		    <Link to="/signup">
-			<Button color="secondary" variant="contained">
+			<Button className={this.props.classes.button} variant="contained">
 			Signup
 			</Button>
 	    	    </Link>
@@ -98,6 +106,7 @@ class Header extends React.Component{
 	    <div>
 		<AppBar style={style}>
 		    <Toolbar>
+		    	<img className="logo" src="https://github.com/ageor0114/betterbrooklyn/blob/master/src/images/logo.png?raw=true"/>
 			    <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
 				<Link to="/">
 				    <h1 className="headerTitle">Better Brooklyn</h1>
@@ -124,7 +133,7 @@ class Header extends React.Component{
 }
 
 
-export default compose(
+export default withStyles(styles)(compose(
     firebaseConnect(),
     connect(({firebase: {auth}}) => ({auth}))
-)(Header);
+)(Header));
