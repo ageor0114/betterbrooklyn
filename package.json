@@ -9,18 +9,14 @@
 						"start-js": "react-scripts start",
 						"build-js": "react-scripts build",
 						"start": "npm-run-all -p watch-css start-js",
-						"build": "npm-run-all build-css build-js",
-						"test": "react-scripts test --env=jsdom",
+						"build": "react-scripts build",
+						"test": "react-scripts test",
 						"eject": "react-scripts eject",
-    "start2": "concurrently \"npm:start:app\" \"npm:start:env\"",
-    "start:app": "react-scripts start",
-    "start:env": "docker-compose -f ./node_modules/@daostack/client/docker-compose.yml up graph-node",
-    "stop:env": "docker-compose -f ./node_modules/@daostack/client/docker-compose.yml down -v",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-	
+						"start2": "concurrently \"npm:start:app\" \"npm:start:env\"",
+						"start:app": "react-scripts start",
+						"start:env": "docker-compose -f ./node_modules/@daostack/client/docker-compose.yml up graph-node",
+						"stop:env": "docker-compose -f ./node_modules/@daostack/client/docker-compose.yml down -v"
+			},
 			"dependencies": {
 						"@daostack/client": "^0.1.28",
 						"@dorgtech/daocomponents": "0.0.3-alpha",
@@ -47,8 +43,6 @@
 						"redux-form": "^7.4.2",
 						"redux-form-material-ui": "^5.0.0-beta.3",
 						"redux-thunk": "^2.3.0",
-						"semantic-ui-css": "^2.4.1",
-						"semantic-ui-react": "^0.87.3",
 						"whatwg-fetch": "^2.0.4"
 			},
 			"devDependencies": {}
