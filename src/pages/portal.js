@@ -11,6 +11,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
+import Member from '../components/member.js';
 
 class PortalPage extends React.Component{
     constructor(props){
@@ -85,6 +86,8 @@ class PortalPage extends React.Component{
 	    	<img className="rocket" src="https://github.com/ageor0114/betterbrooklyn/blob/master/src/images/rocket.jpg?raw=true"/>
 	    	<p id="padding">In the mean time, get ready for our official kickoff date on 7/27 at the Bushwick Generator! We look forward to seeing you.</p>
 	    </center>
+
+	    <Member isRequesting="true" name="Bob" address="0x123" reputation="24"/>
 
 	    {/*<Sidebar.Pushable as={Segment}>
           <VerticalSidebar className="sidebar" animation={'scale down'} direction={'left'} visible={this.state.visible} />
