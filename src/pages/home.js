@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component{
     render(){
-    let filler = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim facilisis gravida. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Amet luctus venenatis lectus magna fringilla. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Sagittis orci a scelerisque purus semper eget duis. Nulla pharetra diam sit amet nisl suscipit. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Fusce ut placerat orci nulla. Pharetra vel turpis nunc eget lorem dolor. Tristique senectus et netus et malesuada.';
+    let mission = "We, Better Brooklyn, are an up and coming Decentralized Autonomous Organization (DAO) that is creating a platform to increase community engagement and representation by introducing a democratic method of distributing finances throughout the community. Our platform enables users to pool money and organize events based off the social needs of the community (clean local parks, organize food fairs, etc.), and enables other users to easily vote for/against any proposals, creating a decentralized, democratic institution.";
 	return(
 		<div id="goth">
 		    <div>
@@ -33,19 +33,23 @@ class HomePage extends React.Component{
 		    		</Grid>
 		    	</Grid>
 		    </div>
-		    <div className="homeCard" id="mission">
-		    	<center><h2>Mission</h2></center>
-		    	<br/>
-		    	<center><p>A decentralized autonomous organization focused on bringing Brooklyn closer together on the social causes they care deeply about. {filler}</p></center>
-		    </div>
-		    <div className="homeCard" id="howTo">
-		    	<center><h2>How It Works</h2></center>
-		   		<br/>
-		   		<center><p>{filler}</p></center>
-		   		<br/>
-		    	<center><AnchorLink href='#landing'>RETURN TO TOP</AnchorLink></center>
-		    	<br/>
-		    </div>
+
+		    <br/>
+
+		    <Grid container spacing={3}>
+		    	<Grid id="padding" item xs={12}>
+			    	<center><h2>Mission</h2></center>
+			    	<br/>
+			    	<center><p>{mission}</p></center>
+		   		</Grid>
+		    </Grid>
+
+		    <br/>
+
+		    <center><AnchorLink href='#landing'>RETURN TO TOP</AnchorLink></center>
+
+		    <br/>
+
 		    <Footer/>
 	    </div>
 	)
