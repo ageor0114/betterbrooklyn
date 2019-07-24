@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-			},
+	
 			"dependencies": {
 						"@daostack/client": "^0.1.28",
 						"@dorgtech/daocomponents": "0.0.3-alpha",
