@@ -11,48 +11,6 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
-import {
-  Checkbox,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  Menu,
-  Segment,
-  Sidebar,
-} from 'semantic-ui-react'
-
-const VerticalSidebar = ({ animation, direction, visible }) => (
-  <Sidebar
-    as={Menu}
-    animation={animation}
-    direction={direction}
-    icon='labeled'
-    inverted
-    vertical
-    visible={visible}
-    width='thin'
-  >
-    <Menu.Item as='a'>
-      <Icon name='tasks' />
-      Proposals
-    </Menu.Item>
-    <Menu.Item as='a'>
-      <Icon name='group'/>{/*'address card outline' />*/}
-      Members
-    </Menu.Item>
-    <Menu.Item as='a'>
-      <Icon name='bitcoin' />
-      Tokens
-    </Menu.Item>
-  </Sidebar>
-)
-
-VerticalSidebar.propTypes = {
-  animation: PropTypes.string,
-  direction: PropTypes.string,
-  visible: PropTypes.bool,
-}
 
 class PortalPage extends React.Component{
     constructor(props){
