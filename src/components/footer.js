@@ -10,7 +10,7 @@ class Footer extends React.Component{
 			<hr noshade width="130px"/>
 			<br/>
 			<p id="goth">Get in touch with us about any questions, comments, concerns you might have -- or if you'd just like to discuss how we can make our city better!</p>
-			<Button>betterbrooklyn@gmail.com</Button>
+			<Button>info@betterbrooklyn.nyc</Button>
 			</center>
 	    </div>
 	)
