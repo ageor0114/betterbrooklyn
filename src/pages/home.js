@@ -37,7 +37,7 @@ class HomePage extends React.Component{
 		    <br/>
 
 		    <Grid container spacing={3}>
-		    	<Grid item xs={12}>
+		    	<Grid id="padding" item xs={12}>
 			    	<center><h2>Mission</h2></center>
 			    	<br/>
 			    	<center><p>{mission}</p></center>
@@ -49,7 +49,7 @@ class HomePage extends React.Component{
 		    <center><AnchorLink href='#landing'>RETURN TO TOP</AnchorLink></center>
 
 		    <br/>
-		    
+
 		    <Footer/>
 	    </div>
 	)
