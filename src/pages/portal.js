@@ -116,8 +116,19 @@ class PortalPage extends React.Component{
 	    });
 	}
 	return(
-	    <div className="portal">
-	    <Sidebar.Pushable as={Segment}>
+	    <div id="goth" className="portal">
+
+	    {/*<Grid container spacing={3}>
+	    <Grid item xs={3}>
+	    </Grid>
+	    <Grid item xs={12} lg={6}>*/}
+	    <center>
+	    	<h1>Hold on tight, content will be released shortly ...</h1>
+	    	<img className="rocket" src="https://github.com/ageor0114/betterbrooklyn/blob/master/src/images/rocket.jpg?raw=true"/>
+	    	<p id="padding">In the mean time, get ready for our official kickoff date on 7/27 at the Bushwick Generator! We look forward to seeing you.</p>
+	    </center>
+
+	    {/*<Sidebar.Pushable as={Segment}>
           <VerticalSidebar className="sidebar" animation={'scale down'} direction={'left'} visible={this.state.visible} />
 
           <Sidebar.Pusher dimmed={false && true}>
@@ -127,7 +138,8 @@ class PortalPage extends React.Component{
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Segment>
           </Sidebar.Pusher>
-        </Sidebar.Pushable>
+        </Sidebar.Pushable>*/}
+		
 		{/*<form onSubmit={(event) => {this.handleSubmit(event);}}>
 		    <FormControl fullWidth>
 			<TextField
