@@ -11,8 +11,8 @@
 						"start": "npm-run-all -p watch-css start-js",
 						"build": "npm-run-all build-css build-js",
 						"test": "react-scripts test --env=jsdom",
-						"eject": "react-scripts eject"
-    "start": "concurrently \"npm:start:app\" \"npm:start:env\"",
+						"eject": "react-scripts eject",
+    "start2": "concurrently \"npm:start:app\" \"npm:start:env\"",
     "start:app": "react-scripts start",
     "start:env": "docker-compose -f ./node_modules/@daostack/client/docker-compose.yml up graph-node",
     "stop:env": "docker-compose -f ./node_modules/@daostack/client/docker-compose.yml down -v",
