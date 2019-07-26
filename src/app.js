@@ -28,6 +28,7 @@ import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
 import PortalPage from './pages/portal';
+import TestPage from './pages/test'
 
 
 
@@ -102,6 +103,7 @@ export default class App extends React.Component{
 					<Route exact path="/login" component={LoginPage} />
 					<Route exact path="/signup" component={SignupPage} />
 					<Route exact path="/portal" component={PortalPage} />
+          <Route exact path="/test" component={TestPage} />
 			    </div>
 			</ConnectedRouter>
 		</Provider>

@@ -11,7 +11,15 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
+
 import Member from '../components/member.js';
+import NewMember from '../components/newMember.js';
+import Proposal from '../components/proposal.js';
+import Arc from '@dorgtech/daocomponents';
+import DAO from '@dorgtech/daocomponents';
+import ExampleDAOView from '@dorgtech/daocomponents';
+import ArcConfig from '@dorgtech/daocomponents';
+import { Member as dMember } from '@dorgtech/daocomponents';
 
 class PortalPage extends React.Component{
     constructor(props){
@@ -75,20 +83,45 @@ class PortalPage extends React.Component{
 	    });
 	}
 	return(
-	    <div id="goth" className="portal">
+	    <div className="portal">
 
-	    {/*<Grid container spacing={3}>
-	    <Grid item xs={3}>
-	    </Grid>
-	    <Grid item xs={12} lg={6}>*/}
+	    {/*<Arc config={new ArcConfig("web3", "graphql", "graphql-ws")}>
+		  <DAO address="0x74504B811BbF357eDB6Daa8346D51f6Dd113113F">
+		    <DAO.Data>
+			  {(data: DAOData) => {
+			  	return(
+			    <div>
+			    <div>{"Token: "}</div>
+			    </div>)}}
+			  </DAO.Data>
+			  <dMember address="0x64c0e885cdd1F5B526f5520beE328aA811418afc"/>
+		  </DAO>
+		</Arc>*/}
+
 	    <center>
-	    	<h1>Hold on tight, content will be released shortly ...</h1>
-	    	<img className="rocket" src="https://github.com/ageor0114/betterbrooklyn/blob/master/src/images/rocket.jpg?raw=true"/>
-	    	<p id="padding">In the mean time, get ready for our official kickoff date on 7/27 at the Bushwick Generator! We look forward to seeing you.</p>
+	    <h3>Proposals</h3>
+	    <Proposal name="Clean Up The Park" yes="15" no="3"/>
+	    <h3>Reputation Requests</h3>
+	    <br/>
+	    <NewMember name="Oumar" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E"/>
+	    <br/>
+	    <h3>Members</h3>
+	    <br/>
+	    <Member name="Nelson" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>
+	    <Member name="Arian" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>
+	    <Member name="Maryna" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>
+	    <Member name="Subhan" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>
+	    <Member name="Felix" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>
+	    <Member name="Tiffany" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>
+	    <Member name="Austin" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>
 	    </center>
-
-	    <Member isRequesting="true" name="Bob" address="0x123" reputation="24"/>
-
 	    {/*<Sidebar.Pushable as={Segment}>
           <VerticalSidebar className="sidebar" animation={'scale down'} direction={'left'} visible={this.state.visible} />
 

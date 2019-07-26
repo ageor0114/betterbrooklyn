@@ -5,16 +5,19 @@
 @import "components.scss";
 @import "login.scss";
 @import "member.scss";
+@import "proposal.scss";
 
 *{
       margin: 0;
       padding: 0;
+      font-family: 'Didact Gothic';
 }
 
 #container{ margin-top: 5rem; }
 
 body{ 
 	font-size: 16px; 
+	background-color: white;//#f7f7f7;
 }
 
 .table{	
