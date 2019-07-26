@@ -16,6 +16,7 @@ import initialState from './initialState.json';
 import './style/main.css';
 import Header from './components/header';
 import Grid from '@material-ui/core/Grid';
+import { Arc, ProdArcConfig, DAO } from 'temp-daocomponents';
 
 
 /*
@@ -96,6 +97,8 @@ export default class App extends React.Component{
 	return(
 	    <MuiThemeProvider theme={theme}>
 		<Provider store={store}>
+        <Arc config={ProdArcConfig}>
+        <DAO address={"0xYOUR_DAO_ADDRESS"}>
 			<ConnectedRouter>
 			    <div>
 					<Header></Header>
@@ -106,6 +109,8 @@ export default class App extends React.Component{
           <Route exact path="/test" component={TestPage} />
 			    </div>
 			</ConnectedRouter>
+        </DAO>
+        </Arc>
 		</Provider>
 	    </MuiThemeProvider>
 	);
