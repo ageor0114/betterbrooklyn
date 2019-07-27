@@ -12,14 +12,17 @@ import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
-import Member from '../components/member.js';
+import  Member from '../components/member.js';
 import NewMember from '../components/newMember.js';
 import Proposal from '../components/proposal.js';
-import Arc from '@dorgtech/daocomponents';
+/*import Arc from '@dorgtech/daocomponents';
 import DAO from '@dorgtech/daocomponents';
 import ExampleDAOView from '@dorgtech/daocomponents';
 import ArcConfig from '@dorgtech/daocomponents';
-import { Member as dMember } from '@dorgtech/daocomponents';
+import { Member as dMember } from '@dorgtech/daocomponents';*/
+import { Member as DMember } from 'temp-daocomponents';
+import DAO from 'temp-daocomponents';
+import { Members as DMembers } from 'temp-daocomponents';
 
 class PortalPage extends React.Component{
     constructor(props){
@@ -84,6 +87,7 @@ class PortalPage extends React.Component{
 	}
 	return(
 	    <div className="portal">
+		<center>
 
 	    {/*<Arc config={new ArcConfig("web3", "graphql", "graphql-ws")}>
 		  <DAO address="0x74504B811BbF357eDB6Daa8346D51f6Dd113113F">
@@ -97,8 +101,67 @@ class PortalPage extends React.Component{
 			  <dMember address="0x64c0e885cdd1F5B526f5520beE328aA811418afc"/>
 		  </DAO>
 		</Arc>*/}
+		<DAO.Data>
+		{(data: DAOData) => {
+		  	return(
+		    <div>
+		    <div>{"DAO: " + data.name}</div>
+		    <div>{"Token: " + data.tokenName}</div>
+		    </div>)}}
+		</DAO.Data>
 
-	    <center>
+		{/*TRY DMembers*/}
+		{/*<DMember address="0xb1b7586656116d546033e3baff69bfcd6592225e">
+		<DAO.Data>
+		<DMember.Data>
+		{(dao: DAOData, member: MemberData) => {
+			return(
+			<div>
+			<p>{"DAO Address: " + dao.address}</p>
+			<p>{"Member Address: " + member.address}</p>
+			</div>)}}
+		</DMember.Data>
+		</DAO.Data>
+		</DMember>*/}
+
+		<br/>
+
+		<DMembers>
+		<DMember.Data>
+		{(member: MemberData) => {
+	      return(
+
+	      <div>
+	      <Member name="Name" address={member.address} reputation={""+(member.reputation/1000000000000000000)}/>
+	      <br/>
+	      </div>)}}
+		</DMember.Data>
+		</DMembers>
+
+		{/*<DAO.Data>
+		  {(dao: DAOData) => {
+		  	return(
+		    <div>{dao.name}</div>
+		  )}}
+		</DAO.Data>*/}
+
+	    {/*<Members>
+	    <DAO.Code>
+	    <Member.Data>
+		    {(daoCode: DAOCode, member: MemberData) => {
+		    	return(
+		      <div>
+		      <div>{member.name}</div>
+		      <div>{member.reputation}</div>
+		      </div>)}}
+	    </Member.Data>
+	    </DAO.Code>
+	    </Members>*/}
+
+	    <hr/>
+
+	    
+
 	    <h3>Proposals</h3>
 	    <Proposal name="Clean Up The Park" yes="15" no="3"/>
 	    <h3>Reputation Requests</h3>
@@ -107,21 +170,23 @@ class PortalPage extends React.Component{
 	    <br/>
 	    <h3>Members</h3>
 	    <br/>
-	    <Member name="Nelson" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    {/*<RMember name="Nelson" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
 	    <br/>
-	    <Member name="Arian" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <RMember name="Arian" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
 	    <br/>
-	    <Member name="Maryna" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <RMember name="Maryna" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
 	    <br/>
-	    <Member name="Subhan" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <RMember name="Subhan" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
 	    <br/>
-	    <Member name="Felix" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <RMember name="Felix" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
 	    <br/>
-	    <Member name="Tiffany" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <RMember name="Tiffany" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
 	    <br/>
-	    <Member name="Austin" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
-	    <br/>
+	    <RMember name="Austin" address="0x4fBAA83195fC4eEb798C6e0217d88046c9310c0E" reputation="24"/>
+	    <br/>*/}
+
 	    </center>
+
 	    {/*<Sidebar.Pushable as={Segment}>
           <VerticalSidebar className="sidebar" animation={'scale down'} direction={'left'} visible={this.state.visible} />
 

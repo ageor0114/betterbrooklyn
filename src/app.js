@@ -98,7 +98,7 @@ export default class App extends React.Component{
 	    <MuiThemeProvider theme={theme}>
 		<Provider store={store}>
         <Arc config={ProdArcConfig}>
-        <DAO address={"0xYOUR_DAO_ADDRESS"}>
+        <DAO address={"0xbe1a98d3452f6da6e0984589e545d4fc25af7526"}>
 			<ConnectedRouter>
 			    <div>
 					<Header></Header>

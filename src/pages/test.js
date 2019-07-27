@@ -1,10 +1,10 @@
 import React from 'react';
-import {
+/*import {
   Arc,
   DefaultArcConfig,
   Proposals,
   Proposal
-} from '@dorgtech/daocomponents';
+} from '@dorgtech/daocomponents';*/
 import {
   ExpansionPanel,
   ExpansionPanelSummary,
@@ -18,7 +18,7 @@ class TestPage extends React.Component{
     render(){	
 	return(
 		<div>
-		
+
 		<br/>
 		<br/>
 		<br/>
