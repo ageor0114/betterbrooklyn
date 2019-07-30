@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Snackbar from '@material-ui/core/Snackbar';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const styles = {
   root: {
@@ -55,11 +57,16 @@ class Header extends React.Component{
 	    }
 	});
     }
+
+    
+
     
     render(){
+
 	const style = {
 			background:'#a0522d',//'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
 		  	color: 'white',
+		  	boxShadow: 'none',
 		  	//fontFamily: "Helvetica",
 			};
 	let greeting;
@@ -71,11 +78,11 @@ class Header extends React.Component{
 	if(this.props.auth.isLoaded && !this.props.auth.isEmpty){
 	    // user is logged in!
 	    greeting = <span>Hello {this.props.auth.email}!
-		<Link to="/sandwiches">
+		<Link to="/login">
 		    <Button variant="contained"
 			style={{marginLeft: 30}}
 			    color="secondary">
-			Portal
+			HOME
 		    </Button>
 	    	</Link>
 
@@ -88,6 +95,7 @@ class Header extends React.Component{
 	    // user is not logged in
 	    greeting =
 		<span>
+			  
 		    <Link to="/login">
 			<Button className={this.props.classes.loginbutton}>
 			Login

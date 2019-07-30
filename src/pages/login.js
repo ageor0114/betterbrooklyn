@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import PortalPage from './portal';
 
 
 const styles = {
@@ -170,12 +171,12 @@ class LoginPage extends React.Component{
 		    />
 		</FormControl>
 		<center>
-		<Link to="/portal">
+		{/*<Link to="/portal">*/}
 		<Button type="submit"
 			className={this.props.classes.button}>
 		    Login
 		</Button>
-		</Link>
+		{/*</Link>*/}
 		<br/>
 		<br/>
         <p><a href="/signup"
@@ -192,14 +193,15 @@ class LoginPage extends React.Component{
 	    console.log(this.props);
 	    payload = <div>
 		<div>
-		    Welcome {this.props.auth.email}
+		<center>
+		    <h1>Welcome back, {this.props.auth.email}!</h1>
+		    <br/>
+		    <p>What would you like to do today?</p>
+		    <PortalPage/>
+		    <br/>
+		 </center>
 		</div>
 		<div>
-		    <Button variant="contained"
-			    color="secondary"
-			    onClick={() => {this.props.firebase.logout();}}>
-			Logout
-		    </Button>
 		    
 		</div>
 	    </div>;

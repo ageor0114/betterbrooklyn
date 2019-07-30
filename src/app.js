@@ -1,9 +1,4 @@
-/*
-   --------
-   import the packages we need
-   --------
- */
-
+//PACKAGE IMPORTS
 import React from 'react';
 import { connect, Provider } from 'react-redux';
 import { createStore, combineReducers, compose } from 'redux';
@@ -17,27 +12,19 @@ import './style/main.css';
 import Header from './components/header';
 import Grid from '@material-ui/core/Grid';
 import { Arc, ProdArcConfig, DAO } from 'temp-daocomponents';
+import Web3 from 'web3';
 
-
-/*
-   --------
-   import your pages here
-   --------
- */
-
+//PAGE IMPORTS
 import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
 import PortalPage from './pages/portal';
-import TestPage from './pages/test'
+import TestPage from './pages/test';
+import ProposalsPage from './pages/proposals';
+import MembersPage   from './pages/members-page';
 
 
-
-/*
-   --------
-   configure everything
-   --------
- */
+//CONFIGURATIONS
 
 const firebaseConfig = {
     /*
@@ -61,39 +48,35 @@ const rrfConfig = {
 // Initialize firebase instance
 firebase.initializeApp(firebaseConfig);
 
-
-
-
-
-
-
-
-
-/*
-   --------
-   setup redux and router
-   --------
- */
-
-
+// React Redux & Router
 const createStoreWithFirebase = compose(
     reactReduxFirebase(firebase, rrfConfig)
 )(createStore);
 
 // Add firebase to reducers
-const rootReducer = combineReducers({
-    firebase: firebaseReducer
-});
-
+const rootReducer = combineReducers({ firebase: firebaseReducer });
 const store = createStoreWithFirebase(rootReducer, initialState);
-
 
 const ConnectedRouter = connect()(Router);
 
-
-
 export default class App extends React.Component{
     render(){
+      let web3;
+      if (window.ethereum) {
+         web3 = new Web3(window.ethereum);
+         try { 
+            window.ethereum.enable().then(function() {
+                // User has allowed account access to DApp...
+            });
+         } catch(e) {
+            // User has denied account access to DApp...
+         }
+      }
+      // Legacy DApp Browsers
+      else if (window.web3) { web3 = new Web3(web3.currentProvider); }
+      // Non-DApp Browsers
+      else { alert('You have to install MetaMask !'); }
+
 	return(
 	    <MuiThemeProvider theme={theme}>
 		<Provider store={store}>
@@ -107,6 +90,8 @@ export default class App extends React.Component{
 					<Route exact path="/signup" component={SignupPage} />
 					<Route exact path="/portal" component={PortalPage} />
           <Route exact path="/test" component={TestPage} />
+          <Route exact path="/proposals" component={ProposalsPage}/>
+          <Route exact path="/members" component={MembersPage}/>
 			    </div>
 			</ConnectedRouter>
         </DAO>

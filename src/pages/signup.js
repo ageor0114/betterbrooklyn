@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import CreateReputation from '../components/createReputation.js';
+
 
 const styles = {
 	signupcard: {
@@ -148,7 +150,7 @@ class SignupPage extends React.Component{
             margin="normal"
             />
 		</FormControl>
-		<center><Link to="/portal"><Button type="submit" className={this.props.classes.button}>Signup</Button></Link>
+		<center><Button type="submit" className={this.props.classes.button}>Signup</Button>
 		 <br/>
 		 <br/>
         <p><a href="/login"
@@ -158,20 +160,15 @@ class SignupPage extends React.Component{
         </div>
 	    </form>;
 	}
+	// user is logged in 
 	if(this.props.auth.isLoaded && !this.props.auth.isEmpty){
 
 	    payload = <div>
-		<div>
-		    Welcome {this.props.auth.email}
-		</div>
-		<div>
-		    <Button variant="contained"
-			    color="secondary"
-			    onClick={() => {this.props.firebase.logout();}}>
-			Logout
-		    </Button>
-		    
-		</div>
+			<center>
+		    <h1>Welcome to the DAO, {this.props.auth.email}!</h1>
+		    <br/>
+		    <CreateReputation/>
+		    </center>
 	    </div>;
 	}
 	return(
