@@ -1,27 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { compose } from 'redux'
-import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
-import PropTypes from 'prop-types';
-
-import  Member from '../components/member.js';
-import NewMember from '../components/newMember.js';
-import Proposal from '../components/proposal.js'; //unused
-import CreateProposal from '../components/createProposal.js';
-import CreateReputation from '../components/createReputation.js';
-/*import Arc from '@dorgtech/daocomponents';
-import DAO from '@dorgtech/daocomponents';
-import ExampleDAOView from '@dorgtech/daocomponents';
-import ArcConfig from '@dorgtech/daocomponents';
-import { Member as dMember } from '@dorgtech/daocomponents';*/
-import { Member as DMember } from 'temp-daocomponents';
-import DAO from 'temp-daocomponents';
-import { Members as DMembers } from 'temp-daocomponents';
-import { Proposal as DProposal } from 'temp-daocomponents';
-import { Proposals as DProposals } from 'temp-daocomponents';
+import {
+  Proposal as DProposal,
+  Proposals as DProposals
+} from '@dorgtech/daocomponents';
 import { IProposalOutcome } from '@daostack/client';
 
 import {
@@ -30,7 +12,6 @@ import {
   ExpansionPanelDetails,
   ExpansionPanelActions,
   Divider,
-  Typography,
 } from '@material-ui/core';
 
 class ProposalsPage extends React.Component{

@@ -5,7 +5,6 @@ import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
-import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import CreateReputation from '../components/createReputation.js';
 

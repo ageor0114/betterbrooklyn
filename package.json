@@ -18,6 +18,7 @@
     "stop:env": "docker-compose -f ./node_modules/@daostack/client/docker-compose.yml down -v"
   },
   "dependencies": {
+    "@dorgtech/daocomponents": "0.0.5-alpha",
     "@material-ui/core": "^1.4.0",
     "@material-ui/icons": "^1.1.0",
     "bootstrap": "^4.3.1",
@@ -41,7 +42,6 @@
     "redux-form": "^7.4.2",
     "redux-form-material-ui": "^5.0.0-beta.3",
     "redux-thunk": "^2.3.0",
-    "temp-daocomponents": "0.0.4-alpha",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {},

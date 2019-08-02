@@ -10,8 +10,7 @@ import theme from './style/theme';
 import initialState from './initialState.json';
 import './style/main.css';
 import Header from './components/header';
-import Grid from '@material-ui/core/Grid';
-import { Arc, ProdArcConfig, DAO } from 'temp-daocomponents';
+import { Arc, ProdArcConfig, DAO } from '@dorgtech/daocomponents';
 import Web3 from 'web3';
 
 //PAGE IMPORTS
@@ -61,43 +60,28 @@ const ConnectedRouter = connect()(Router);
 
 export default class App extends React.Component{
     render(){
-      let web3;
-      if (window.ethereum) {
-         web3 = new Web3(window.ethereum);
-         try { 
-            window.ethereum.enable().then(function() {
-                // User has allowed account access to DApp...
-            });
-         } catch(e) {
-            // User has denied account access to DApp...
-         }
-      }
-      // Legacy DApp Browsers
-      else if (window.web3) { web3 = new Web3(web3.currentProvider); }
-      // Non-DApp Browsers
-      else { alert('You have to install MetaMask !'); }
 
-	return(
-	    <MuiThemeProvider theme={theme}>
-		<Provider store={store}>
+    return(
+        <MuiThemeProvider theme={theme}>
+        <Provider store={store}>
         <Arc config={ProdArcConfig}>
         <DAO address={"0xbe1a98d3452f6da6e0984589e545d4fc25af7526"}>
-			<ConnectedRouter>
-			    <div>
-					<Header></Header>
-					<Route exact path="/" component={HomePage} />
-					<Route exact path="/login" component={LoginPage} />
-					<Route exact path="/signup" component={SignupPage} />
-					<Route exact path="/portal" component={PortalPage} />
-          <Route exact path="/test" component={TestPage} />
-          <Route exact path="/proposals" component={ProposalsPage}/>
-          <Route exact path="/members" component={MembersPage}/>
-			    </div>
-			</ConnectedRouter>
+            <ConnectedRouter>
+                <div>
+                    <Header></Header>
+                    <Route exact path="/" component={HomePage} />
+                    <Route exact path="/login" component={LoginPage} />
+                    <Route exact path="/signup" component={SignupPage} />
+                    <Route exact path="/portal" component={PortalPage} />
+                    <Route exact path="/test" component={TestPage} />
+                    <Route exact path="/proposals" component={ProposalsPage}/>
+                    <Route exact path="/members" component={MembersPage}/>
+                </div>
+            </ConnectedRouter>
         </DAO>
         </Arc>
-		</Provider>
-	    </MuiThemeProvider>
-	);
+        </Provider>
+        </MuiThemeProvider>
+    );
     }
 }
